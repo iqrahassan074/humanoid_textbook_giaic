@@ -1,13 +1,9 @@
-# Node
 node_modules/
 frontend/node_modules/
+frontend/build/
+frontend/.docusaurus/
+frontend/.cache/
 
-# Python
-__pycache__/
-.venv/
-
-# Env
 .env
-
-# OS
-.DS_Store
+.venv/
+__pycache__/
