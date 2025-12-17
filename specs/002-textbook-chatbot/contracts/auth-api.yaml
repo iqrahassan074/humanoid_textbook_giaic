@@ -1,0 +1,191 @@
+openapi: 3.0.0
+info:
+  title: Authentication API
+  description: API for user authentication and management
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Development server
+
+paths:
+  /auth/register:
+    post:
+      summary: Register new user
+      description: Create a new user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRegistration'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid input data
+        '409':
+          description: User with this email already exists
+        '500':
+          description: Internal server error
+
+  /auth/login:
+    post:
+      summary: Login user
+      description: Authenticate user and return JWT token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid credentials
+        '500':
+          description: Internal server error
+
+  /auth/logout:
+    post:
+      summary: Logout user
+      description: Invalidate user session
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Logout successful
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+  /auth/me:
+    get:
+      summary: Get current user
+      description: Retrieve information about the authenticated user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    UserRegistration:
+      type: object
+      required:
+        - email
+        - password
+        - first_name
+        - last_name
+      properties:
+        email:
+          type: string
+          format: email
+          description: User's email address
+        password:
+          type: string
+          format: password
+          description: User's password
+        first_name:
+          type: string
+          description: User's first name
+        last_name:
+          type: string
+          description: User's last name
+
+    UserLogin:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          description: User's email address
+        password:
+          type: string
+          format: password
+          description: User's password
+
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - first_name
+        - last_name
+        - created_at
+        - updated_at
+        - is_active
+        - role
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the user
+        email:
+          type: string
+          format: email
+          description: User's email address
+        first_name:
+          type: string
+          description: User's first name
+        last_name:
+          type: string
+          description: User's last name
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+        is_active:
+          type: boolean
+          description: Whether the user account is active
+        role:
+          type: string
+          enum: [student, reader]
+          description: User's role in the system
+
+    LoginResponse:
+      type: object
+      required:
+        - access_token
+        - token_type
+        - user
+      properties:
+        access_token:
+          type: string
+          description: JWT access token
+        token_type:
+          type: string
+          description: Token type (should be "bearer")
+        user:
+          $ref: '#/components/schemas/User'
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

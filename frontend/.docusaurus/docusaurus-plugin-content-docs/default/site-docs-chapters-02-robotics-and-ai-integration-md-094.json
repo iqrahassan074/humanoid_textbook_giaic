@@ -1,0 +1,28 @@
+{
+  "id": "chapters/robotics-and-ai-integration",
+  "title": "Chapter 2: Robotics and AI Integration",
+  "description": "The Convergence of Robotics and AI",
+  "source": "@site/docs/chapters/02-robotics-and-ai-integration.md",
+  "sourceDirName": "chapters",
+  "slug": "/chapters/robotics-and-ai-integration",
+  "permalink": "/textbook/chapters/robotics-and-ai-integration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapters/02-robotics-and-ai-integration.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Chapter 2: Robotics and AI Integration"
+  },
+  "sidebar": "textbook",
+  "previous": {
+    "title": "Chapter 1: Introduction to Physical AI",
+    "permalink": "/textbook/chapters/introduction-to-physical-ai"
+  },
+  "next": {
+    "title": "Chapter 3: Sensorimotor Learning",
+    "permalink": "/textbook/chapters/sensorimotor-learning"
+  }
+}

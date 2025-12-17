@@ -1,0 +1,28 @@
+{
+  "id": "sensorimotor-learning",
+  "title": "Chapter 3: Sensorimotor Learning",
+  "description": "Understanding Sensorimotor Learning",
+  "source": "@site/docs/03-sensorimotor-learning.md",
+  "sourceDirName": ".",
+  "slug": "/sensorimotor-learning",
+  "permalink": "/textbook/sensorimotor-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03-sensorimotor-learning.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Chapter 3: Sensorimotor Learning"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 2: Robotics and AI Integration",
+    "permalink": "/textbook/robotics-and-ai-integration"
+  },
+  "next": {
+    "title": "Chapter 4: Human-Robot Interaction",
+    "permalink": "/textbook/human-robot-interaction"
+  }
+}

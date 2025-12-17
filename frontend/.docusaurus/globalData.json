@@ -1,0 +1,63 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/textbook",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/textbook",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "embodied-intelligence",
+              "path": "/textbook/embodied-intelligence",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "future-of-physical-ai",
+              "path": "/textbook/future-of-physical-ai",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "human-robot-interaction",
+              "path": "/textbook/human-robot-interaction",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "index",
+              "path": "/textbook/",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "introduction-to-physical-ai",
+              "path": "/textbook/introduction-to-physical-ai",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "robotics-and-ai-integration",
+              "path": "/textbook/robotics-and-ai-integration",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "sensorimotor-learning",
+              "path": "/textbook/sensorimotor-learning",
+              "sidebar": "textbookSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "textbookSidebar": {
+              "link": {
+                "path": "/textbook/",
+                "label": "📘 Physical AI Textbook"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

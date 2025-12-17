@@ -1,0 +1,28 @@
+{
+  "id": "chapters/human-robot-interaction",
+  "title": "Chapter 4: Human-Robot Interaction",
+  "description": "Foundations of Human-Robot Interaction",
+  "source": "@site/docs/chapters/04-human-robot-interaction.md",
+  "sourceDirName": "chapters",
+  "slug": "/chapters/human-robot-interaction",
+  "permalink": "/textbook/chapters/human-robot-interaction",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapters/04-human-robot-interaction.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Chapter 4: Human-Robot Interaction"
+  },
+  "sidebar": "textbook",
+  "previous": {
+    "title": "Chapter 3: Sensorimotor Learning",
+    "permalink": "/textbook/chapters/sensorimotor-learning"
+  },
+  "next": {
+    "title": "Chapter 5: Embodied Intelligence",
+    "permalink": "/textbook/chapters/embodied-intelligence"
+  }
+}

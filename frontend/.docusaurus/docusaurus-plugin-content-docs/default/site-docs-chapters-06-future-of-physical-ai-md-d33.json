@@ -1,0 +1,24 @@
+{
+  "id": "chapters/future-of-physical-ai",
+  "title": "Chapter 6: Future of Physical AI",
+  "description": "The Evolving Landscape",
+  "source": "@site/docs/chapters/06-future-of-physical-ai.md",
+  "sourceDirName": "chapters",
+  "slug": "/chapters/future-of-physical-ai",
+  "permalink": "/textbook/chapters/future-of-physical-ai",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapters/06-future-of-physical-ai.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "title": "Chapter 6: Future of Physical AI"
+  },
+  "sidebar": "textbook",
+  "previous": {
+    "title": "Chapter 5: Embodied Intelligence",
+    "permalink": "/textbook/chapters/embodied-intelligence"
+  }
+}

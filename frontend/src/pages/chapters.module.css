@@ -1,0 +1,91 @@
+.main {
+  padding: 2rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.chaptersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.chapterCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapterCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.chapterHeader h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.chapterHeader a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.chapterHeader a:hover {
+  text-decoration: underline;
+}
+
+.chapterDescription {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  flex-grow: 1;
+}
+
+.chapterActions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 996px) {
+  .chaptersGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chaptersGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .main {
+    padding: 1rem 0;
+  }
+
+  .chapterCard {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chaptersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}

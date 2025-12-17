@@ -1,0 +1,28 @@
+{
+  "id": "embodied-intelligence",
+  "title": "Chapter 5: Embodied Intelligence",
+  "description": "Understanding Embodied Intelligence",
+  "source": "@site/docs/05-embodied-intelligence.md",
+  "sourceDirName": ".",
+  "slug": "/embodied-intelligence",
+  "permalink": "/textbook/embodied-intelligence",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/05-embodied-intelligence.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Chapter 5: Embodied Intelligence"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Chapter 4: Human-Robot Interaction",
+    "permalink": "/textbook/human-robot-interaction"
+  },
+  "next": {
+    "title": "Chapter 6: Future of Physical AI",
+    "permalink": "/textbook/future-of-physical-ai"
+  }
+}

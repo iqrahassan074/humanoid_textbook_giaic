@@ -1,0 +1,20 @@
+{
+  "id": "index",
+  "title": "index",
+  "description": "sidebar_label: 'Table of Contents'",
+  "source": "@site/docs/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/textbook/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "textbookSidebar",
+  "next": {
+    "title": "Chapter 1: Introduction to Physical AI",
+    "permalink": "/textbook/introduction-to-physical-ai"
+  }
+}

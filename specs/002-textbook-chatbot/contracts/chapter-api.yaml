@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: Textbook Chapter API
+  description: API for accessing textbook chapters
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Development server
+
+paths:
+  /chapters:
+    get:
+      summary: Get all textbook chapters
+      description: Retrieve a list of all available textbook chapters
+      responses:
+        '200':
+          description: List of chapters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chapter'
+        '500':
+          description: Internal server error
+
+  /chapters/{chapterId}:
+    get:
+      summary: Get specific chapter
+      description: Retrieve a specific textbook chapter by ID
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Chapter identifier
+      responses:
+        '200':
+          description: Chapter details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+        '404':
+          description: Chapter not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Chapter:
+      type: object
+      required:
+        - id
+        - title
+        - number
+        - content
+        - is_published
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          description: Title of the chapter
+        number:
+          type: integer
+          description: Chapter number (1-6)
+        content:
+          type: string
+          description: Chapter content in markdown format
+        metadata:
+          type: object
+          description: Additional chapter metadata
+          additionalProperties: true
+        is_published:
+          type: boolean
+          description: Whether the chapter is published
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp

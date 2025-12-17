@@ -1,0 +1,179 @@
+openapi: 3.0.0
+info:
+  title: Chatbot API
+  description: API for AI-powered textbook Q&A functionality
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Development server
+
+paths:
+  /chatbot/ask:
+    post:
+      summary: Ask a question about textbook content
+      description: Submit a question about textbook content and receive an answer with citations
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionRequest'
+      responses:
+        '200':
+          description: Question processed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionResponse'
+        '400':
+          description: Invalid question or processing error
+        '401':
+          description: Unauthorized - user must be logged in
+        '422':
+          description: Question cannot be answered based on textbook content
+        '500':
+          description: Internal server error
+
+  /chatbot/history:
+    get:
+      summary: Get user's question history
+      description: Retrieve the history of questions asked by the authenticated user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: List of user's questions and answers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuestionResponse'
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    QuestionRequest:
+      type: object
+      required:
+        - question
+      properties:
+        question:
+          type: string
+          description: The question about textbook content
+        chapter_id:
+          type: string
+          format: uuid
+          description: Optional chapter ID for context
+        include_citations:
+          type: boolean
+          description: Whether to include citations in the response (default: true)
+
+    QuestionResponse:
+      type: object
+      required:
+        - id
+        - question
+        - answer
+        - citations
+        - confidence_score
+        - created_at
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the question-answer pair
+        question:
+          type: string
+          description: The original question
+        answer:
+          type: string
+          description: The AI-generated answer
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+          description: Sources cited in the answer
+        confidence_score:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence score of the answer
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp
+
+    Citation:
+      type: object
+      required:
+        - source
+        - chapter
+        - page_reference
+      properties:
+        source:
+          type: string
+          description: The specific source text or section
+        chapter:
+          type: string
+          description: Chapter where the citation is found
+        page_reference:
+          type: string
+          description: Page or section reference
+        content_preview:
+          type: string
+          description: Preview of the cited content
+
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - first_name
+        - last_name
+        - created_at
+        - updated_at
+        - is_active
+        - role
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the user
+        email:
+          type: string
+          format: email
+          description: User's email address
+        first_name:
+          type: string
+          description: User's first name
+        last_name:
+          type: string
+          description: User's last name
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+        is_active:
+          type: boolean
+          description: Whether the user account is active
+        role:
+          type: string
+          enum: [student, reader]
+          description: User's role in the system
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

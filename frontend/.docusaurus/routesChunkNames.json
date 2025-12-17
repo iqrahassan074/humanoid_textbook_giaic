@@ -1,0 +1,78 @@
+{
+  "/chapters-8c9": {
+    "__comp": "16ed4c59",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/chatbot-522": {
+    "__comp": "b34d6635",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/login-a8c": {
+    "__comp": "380abe66",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/register-d3b": {
+    "__comp": "81f32a84",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/textbook-951": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/textbook-842": {
+    "__comp": "a7bd4aaa",
+    "__props": "adcd17d2"
+  },
+  "/textbook-70b": {
+    "__comp": "a94703ab"
+  },
+  "/textbook/-2f7": {
+    "__comp": "17896441",
+    "content": "c377a04b"
+  },
+  "/textbook/embodied-intelligence-508": {
+    "__comp": "17896441",
+    "content": "fede143f"
+  },
+  "/textbook/future-of-physical-ai-610": {
+    "__comp": "17896441",
+    "content": "3d56645b"
+  },
+  "/textbook/human-robot-interaction-1fc": {
+    "__comp": "17896441",
+    "content": "c052bca8"
+  },
+  "/textbook/introduction-to-physical-ai-6d5": {
+    "__comp": "17896441",
+    "content": "1a12c8b2"
+  },
+  "/textbook/robotics-and-ai-integration-c78": {
+    "__comp": "17896441",
+    "content": "26de239c"
+  },
+  "/textbook/sensorimotor-learning-545": {
+    "__comp": "17896441",
+    "content": "a08b6ef9"
+  },
+  "/-2e1": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}
